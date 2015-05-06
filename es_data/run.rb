@@ -1,6 +1,6 @@
 require "json"
 
-input = File.open("shanghai_stores.json")
+input = File.open("sz_stores_ma.json")
 json_input = JSON.parse(input.read)["hits"]
 
 output_hash = {
@@ -18,13 +18,13 @@ json_input.each do |e|
     },
     "geometry" => {
       "type" => "Point",
-      "coordinates" => [store["lgl_longitude"].to_f, store["lgl_latitude"].to_f]
+      "coordinates" => [store["lgl_longitude_ma"].to_f, store["lgl_latitude_ma"].to_f]
     }
   }
   output_hash["features"] << feature
 end
 
 
-output = File.open("shanghai_stores.geo.json", "w")
+output = File.open("sz_stores_ma.geo.json", "w")
 output.write(output_hash.to_json)
 output.close
