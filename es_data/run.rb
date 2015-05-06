@@ -1,6 +1,6 @@
 require "json"
 
-input = File.open("sz_stores.json")
+input = File.open("shanghai_stores.json")
 json_input = JSON.parse(input.read)["hits"]
 
 output_hash = {
@@ -25,6 +25,6 @@ json_input.each do |e|
 end
 
 
-output = File.open("sz_stores.geo.json", "w")
+output = File.open("shanghai_stores.geo.json", "w")
 output.write(output_hash.to_json)
 output.close
