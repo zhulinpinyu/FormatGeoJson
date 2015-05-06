@@ -1,4 +1,1 @@
-internet_data/china.city.geo.json
-internet_data/china.city.json
-es_data/sz_stores.json
-es_data/sz_stores.geo.json
+*/*.json
